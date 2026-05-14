@@ -1,0 +1,17 @@
+REINO STUDIO V1.3 - pacote pronto para GitHub Pages.
+
+Arquivos principais:
+- index.html
+- manifest.json
+- sw.js
+- icon-192.png
+- icon-512.png
+
+Depois de publicar no GitHub Pages, abrir o link no celular para testar:
+1. Escolher arte oficial
+2. Escolher foto do vendedor
+3. Digitar vendedor e WhatsApp com DDD
+4. Escolher fundo
+5. Visualizar arte
+6. Baixar arte pronta
+7. Copiar ou abrir link do WhatsApp gerado automaticamente
