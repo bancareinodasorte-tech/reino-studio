@@ -1,9 +1,1 @@
-
-{
-"name":"REINO STUDIO V2",
-"short_name":"REINO STUDIO",
-"start_url":"./index.html",
-"display":"standalone",
-"background_color":"#02134d",
-"theme_color":"#02134d"
-}
+{"name":"REINO STUDIO V4 OFICIAL","short_name":"REINO STUDIO","start_url":"./index.html","display":"standalone","background_color":"#063c9f","theme_color":"#063c9f","icons":[]}
