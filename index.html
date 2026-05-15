@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>REINO STUDIO V6 MODELO AZUL OFICIAL</title>
+<title>REINO STUDIO V7 MODELO IDÊNTICO</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#052b86">
 <style>
@@ -32,8 +32,8 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
 <body>
 <div class="app">
   <div class="panel hero">
-    <h1>REINO STUDIO V6 MODELO AZUL</h1>
-    <p>Versão reconstruída para gerar conforme o modelo azul: fundo 100%, cabeçalho por cima do fundo, arte central, selo fixo, foto e dados no rodapé.</p>
+    <h1>REINO STUDIO V7 MODELO IDÊNTICO</h1>
+    <p>Base refeita usando o modelo azul como matriz visual. Fundo cobre 100%, topo fixo, arte central, dados e foto nas posições do modelo.</p>
   </div>
 
   <div class="panel">
@@ -44,298 +44,90 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
     <input type="file" id="fotoInput" accept="image/*">
 
     <div class="row">
-      <div>
-        <label>Nome do vendedor</label>
-        <input type="text" id="nomeInput" placeholder="Nome do vendedor">
-      </div>
-      <div>
-        <label>WhatsApp</label>
-        <input type="tel" id="foneInput" placeholder="88999999999" maxlength="15" inputmode="numeric">
-      </div>
+      <div><label>Nome do vendedor</label><input type="text" id="nomeInput" placeholder="Nome do vendedor"></div>
+      <div><label>WhatsApp</label><input type="tel" id="foneInput" placeholder="88999999999" maxlength="15" inputmode="numeric"></div>
     </div>
 
     <div class="row">
-      <div>
-        <label>Fundo oficial</label>
-        <select id="fundoSelect">
-          <option value="assets/fundo-azul-premium.jpg" selected>Azul oficial modelo</option>
-          <option value="assets/fundo-azul-marca.png">Azul marca d’água</option>
-          <option value="assets/fundo-azul-escuro.jpg">Azul escuro</option>
-          <option value="assets/fundo-verde-premium.jpg">Verde premium</option>
-        </select>
-      </div>
-      <div>
-        <label>Cor do texto</label>
-        <select id="corSelect">
-          <option value="#000000" selected>Preto</option>
-          <option value="#ffffff">Branco</option>
-          <option value="#ffd84d">Dourado</option>
-          <option value="#073b9a">Azul escuro</option>
-        </select>
-      </div>
+      <div><label>Fundo oficial</label><select id="fundoSelect">
+        <option value="assets/fundo-azul-premium.jpg" selected>Azul oficial modelo</option>
+        <option value="assets/fundo-azul-escuro.jpg">Azul escuro</option>
+        <option value="assets/fundo-verde-premium.jpg">Verde premium</option>
+      </select></div>
+      <div><label>Cor do texto</label><select id="corSelect">
+        <option value="#000000" selected>Preto</option><option value="#ffffff">Branco</option><option value="#ffd84d">Dourado</option><option value="#073b9a">Azul escuro</option>
+      </select></div>
     </div>
 
-    <label>Adicionar novos fundos durante o uso</label>
-    <input type="file" id="novosFundosInput" accept="image/*" multiple>
+    <label>Adicionar novos fundos durante o uso</label><input type="file" id="novosFundosInput" accept="image/*" multiple>
 
     <div class="row">
-      <div>
-        <label>Fonte</label>
-        <select id="fonteSelect">
-          <option value="Arial">Arial Moderna</option>
-          <option value="Arial Black">Arial Black Forte</option>
-          <option value="Trebuchet MS">Trebuchet</option>
-          <option value="Verdana">Verdana</option>
-          <option value="Tahoma">Tahoma</option>
-          <option value="Georgia">Georgia Elegante</option>
-          <option value="Times New Roman">Times Clássica</option>
-          <option value="Impact">Impact Destaque</option>
-        </select>
-      </div>
-      <div>
-        <label>Tamanho</label>
-        <select id="tamanhoSelect">
-          <option value="44">Pequeno</option>
-          <option value="52" selected>Médio</option>
-          <option value="60">Grande</option>
-          <option value="68">Muito grande</option>
-        </select>
-      </div>
+      <div><label>Fonte</label><select id="fonteSelect">
+        <option value="Arial">Arial Moderna</option><option value="Arial Black">Arial Black Forte</option><option value="Trebuchet MS">Trebuchet</option><option value="Verdana">Verdana</option><option value="Tahoma">Tahoma</option><option value="Georgia">Georgia Elegante</option><option value="Times New Roman">Times Clássica</option><option value="Impact">Impact Destaque</option>
+      </select></div>
+      <div><label>Tamanho</label><select id="tamanhoSelect">
+        <option value="48">Pequeno</option><option value="56" selected>Médio</option><option value="64">Grande</option><option value="72">Muito grande</option>
+      </select></div>
     </div>
 
     <label><input type="checkbox" id="boldInput" style="width:auto;margin-right:8px"> Texto em negrito</label>
 
     <label>Ajuste fino da foto</label>
-    <div class="minirow">
-      <button onclick="ajustar('zoom',.05)">+</button>
-      <button onclick="ajustar('zoom',-.05)">−</button>
-      <button onclick="ajustar('y',-14)">↑</button>
-      <button onclick="ajustar('y',14)">↓</button>
-    </div>
-    <div class="minirow">
-      <button onclick="ajustar('x',-14)">←</button>
-      <button onclick="ajustar('x',14)">→</button>
-      <button onclick="resetFoto()">Reset</button>
-      <button onclick="copiarLink()">Link</button>
-    </div>
+    <div class="minirow"><button onclick="ajustar('zoom',.05)">+</button><button onclick="ajustar('zoom',-.05)">−</button><button onclick="ajustar('y',-14)">↑</button><button onclick="ajustar('y',14)">↓</button></div>
+    <div class="minirow"><button onclick="ajustar('x',-14)">←</button><button onclick="ajustar('x',14)">→</button><button onclick="resetFoto()">Reset</button><button onclick="copiarLink()">Link</button></div>
 
     <button class="secondary" onclick="desenhar()">VISUALIZAR ARTE</button>
     <button class="primary" onclick="baixar()">BAIXAR PNG HD</button>
     <button class="green" onclick="compartilhar()">SALVAR / COMPARTILHAR</button>
 
     <div class="linkbox" id="linkBox">Digite o WhatsApp para gerar o link automaticamente.</div>
-    <p class="help">A base visual segue o modelo azul: o fundo escolhido cobre toda a arte e os elementos ficam sobre ele em posição fixa.</p>
+    <p class="help">Para ficar idêntico ao modelo, a foto ideal deve ser PNG sem fundo. Se enviar JPG, o sistema não inventa remoção de fundo; ele usa a foto real enviada.</p>
   </div>
 
-  <div class="preview-wrap">
-    <canvas id="canvas" width="1080" height="1920"></canvas>
-  </div>
+  <div class="preview-wrap"><canvas id="canvas" width="1080" height="1920"></canvas></div>
 </div>
 
 <script>
-const W=1080,H=1920;
-const canvas=document.getElementById('canvas');
-const ctx=canvas.getContext('2d');
-const imgs={};
-let arteImg=null, fotoImg=null, waLink='';
-let customFundos={};
-let fotoState={zoom:1.06,x:0,y:-8};
+const W=1080,H=1920, canvas=document.getElementById('canvas'), ctx=canvas.getContext('2d');
+const imgs={}; let arteImg=null, fotoImg=null, waLink=''; let customFundos={}; let fotoState={zoom:1.00,x:0,y:0};
 
-function carregarImagem(src){
-  return new Promise(resolve=>{
-    const img=new Image();
-    img.onload=()=>resolve(img);
-    img.onerror=()=>resolve(null);
-    img.src=src;
-  });
-}
-function readFileImage(file){
-  return new Promise(resolve=>{
-    const r=new FileReader();
-    r.onload=()=>{
-      const img=new Image();
-      img.onload=()=>resolve(img);
-      img.src=r.result;
-    };
-    r.readAsDataURL(file);
-  });
-}
-function drawCover(img,x,y,w,h){
-  if(!img)return;
-  const ir=img.width/img.height, br=w/h;
-  let sx=0,sy=0,sw=img.width,sh=img.height;
-  if(ir>br){ sw=img.height*br; sx=(img.width-sw)/2; }
-  else{ sh=img.width/br; sy=(img.height-sh)/2; }
-  ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);
-}
-function drawContain(img,x,y,w,h){
-  if(!img)return;
-  const r=Math.min(w/img.width,h/img.height);
-  const nw=img.width*r, nh=img.height*r;
-  ctx.drawImage(img,x+(w-nw)/2,y+(h-nh)/2,nw,nh);
-}
-function roundRect(x,y,w,h,r){
-  ctx.beginPath();
-  ctx.moveTo(x+r,y);
-  ctx.arcTo(x+w,y,x+w,y+h,r);
-  ctx.arcTo(x+w,y+h,x,y+h,r);
-  ctx.arcTo(x,y+h,x,y,r);
-  ctx.arcTo(x,y,x+w,y,r);
-  ctx.closePath();
-}
-function formatDigits(raw){
-  let n=(raw||'').replace(/\D/g,'').slice(0,11);
-  if(n.length<=2)return n;
-  if(n.length<=7)return '('+n.slice(0,2)+') '+n.slice(2);
-  return '('+n.slice(0,2)+') '+n.slice(2,7)+'-'+n.slice(7,11);
-}
-function atualizarLink(){
-  const d=(foneInput.value||'').replace(/\D/g,'').slice(0,11);
-  if(d.length===11){waLink='https://wa.me/55'+d;linkBox.textContent=waLink;}
-  else{waLink='';linkBox.textContent='Contato incompleto. Digite DDD + número com 11 dígitos.';}
-}
-function fitText(text,x,y,maxW,fontSize,color,weight,fontFamily){
-  let size=fontSize;
-  do{
-    ctx.font=`${weight} ${size}px "${fontFamily}", Arial, sans-serif`;
-    if(ctx.measureText(text).width<=maxW) break;
-    size-=2;
-  }while(size>28);
-  ctx.fillStyle=color;
-  ctx.fillText(text,x,y);
-}
-function drawSkewTag(x,y,text){
-  ctx.save();
-  ctx.translate(x,y);
-  ctx.transform(1,0,-0.10,1,0,0);
-  const grad=ctx.createLinearGradient(0,0,260,80);
-  grad.addColorStop(0,'#072c84');
-  grad.addColorStop(1,'#0050c6');
-  ctx.fillStyle=grad;
-  roundRect(0,0,285,78,8);
-  ctx.fill();
-  ctx.lineWidth=4;
-  ctx.strokeStyle='#d9ad32';
-  ctx.stroke();
-  ctx.setTransform(1,0,0,1,0,0);
-  ctx.fillStyle='#ffe26a';
-  ctx.font='900 33px Arial Black';
-  ctx.textAlign='center';
-  ctx.fillText(text,x+140,y+50);
-  ctx.textAlign='left';
-  ctx.restore();
-}
-function drawWhatsappCircle(cx,cy,r){
-  ctx.save();
-  const g=ctx.createRadialGradient(cx-20,cy-20,10,cx,cy,r);
-  g.addColorStop(0,'#65ff94');g.addColorStop(1,'#00a02f');
-  ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();
-  ctx.lineWidth=5;ctx.strokeStyle='#fff';ctx.stroke();
-  ctx.fillStyle='#fff';ctx.font='900 66px Arial';ctx.textAlign='center';ctx.textBaseline='middle';
-  ctx.fillText('☎',cx,cy+2);
-  ctx.restore();
-}
-function drawUserCircle(cx,cy,r){
-  ctx.save();
-  const g=ctx.createRadialGradient(cx-20,cy-20,10,cx,cy,r);
-  g.addColorStop(0,'#ffe985');g.addColorStop(1,'#c68b08');
-  ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();
-  ctx.lineWidth=5;ctx.strokeStyle='#fff';ctx.stroke();
-  ctx.fillStyle='#06205e';ctx.beginPath();ctx.arc(cx,cy-16,18,0,Math.PI*2);ctx.fill();
-  roundRect(cx-36,cy+10,72,30,8);ctx.fill();
-  ctx.restore();
-}
+function carregarImagem(src){return new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>resolve(null);img.src=src;});}
+function readFileImage(file){return new Promise(resolve=>{const r=new FileReader();r.onload=()=>{const img=new Image();img.onload=()=>resolve(img);img.src=r.result;};r.readAsDataURL(file);});}
+function drawCover(img,x,y,w,h){if(!img)return;const ir=img.width/img.height,br=w/h;let sx=0,sy=0,sw=img.width,sh=img.height;if(ir>br){sw=img.height*br;sx=(img.width-sw)/2}else{sh=img.width/br;sy=(img.height-sh)/2}ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h)}
+function formatDigits(raw){let n=(raw||'').replace(/\D/g,'').slice(0,11);if(n.length<=2)return n;if(n.length<=7)return '('+n.slice(0,2)+') '+n.slice(2);return '('+n.slice(0,2)+') '+n.slice(2,7)+'-'+n.slice(7,11)}
+function atualizarLink(){const d=(foneInput.value||'').replace(/\D/g,'').slice(0,11);if(d.length===11){waLink='https://wa.me/55'+d;linkBox.textContent=waLink}else{waLink='';linkBox.textContent='Contato incompleto. Digite DDD + número com 11 dígitos.'}}
+function fitText(text,x,y,maxW,fontSize,color,weight,fontFamily){let size=fontSize;do{ctx.font=`${weight} ${size}px "${fontFamily}", Arial, sans-serif`;if(ctx.measureText(text).width<=maxW)break;size-=2}while(size>30);ctx.fillStyle=color;ctx.fillText(text,x,y)}
 function desenhar(){
   atualizarLink();
-
-  const color=corSelect.value;
-  const fontFamily=fonteSelect.value;
-  const weight=boldInput.checked?'900':'400';
-  const size=parseInt(tamanhoSelect.value,10);
-  const nome=(nomeInput.value||'Nome do vendedor').trim();
-  const fone=formatDigits(foneInput.value)||'(00) 0 0000-0000';
-
+  const color=corSelect.value, fontFamily=fonteSelect.value, weight=boldInput.checked?'900':'400', size=parseInt(tamanhoSelect.value,10);
+  const nome=(nomeInput.value||'Nome do vendedor').trim(), fone=formatDigits(foneInput.value)||'(00) 0 0000-0000';
   ctx.clearRect(0,0,W,H);
-
-  // FUNDO 100% ATÉ O TOPO
-  if(imgs.bg) drawCover(imgs.bg,0,0,W,H);
-  else{ctx.fillStyle='#0b84e9';ctx.fillRect(0,0,W,H);}
-
-  // leve clareamento apenas para leitura, sem remover o fundo
-  ctx.fillStyle='rgba(255,255,255,.08)';
-  ctx.fillRect(0,0,W,H);
-
-  // CABEÇALHO EXATAMENTE SOBRE O FUNDO, NO TOPO
-  if(imgs.header) drawContain(imgs.header,132,24,816,175);
-  else{
-    ctx.fillStyle='#f4c64a';ctx.font='900 54px Arial Black';ctx.textAlign='center';ctx.fillText('VENDEDORES AUTORIZADOS',540,88);
-    ctx.fillStyle='#063c9f';ctx.font='900 38px Arial';ctx.fillText('Reino da Sorte',540,145);ctx.textAlign='left';
-  }
-
-  // ARTE PRINCIPAL - posição semelhante ao modelo azul
-  const artX=132, artY=235, artW=816, artH=1110;
-  if(arteImg) drawCover(arteImg,artX,artY,artW,artH);
-  else{
-    ctx.fillStyle='rgba(220,220,220,.95)';
-    ctx.fillRect(artX,artY,artW,artH);
-    ctx.fillStyle='#111';ctx.font='56px Arial';ctx.textAlign='center';ctx.fillText('Área da arte do sorteio',540,790);ctx.textAlign='left';
-  }
-
-  // área inferior translúcida, como o modelo azul
-  ctx.fillStyle='rgba(255,255,255,.38)';
-  ctx.fillRect(0,1350,W,570);
-
-  // selo fixo no canto superior direito do rodapé, como modelo
-  if(imgs.selo) drawContain(imgs.selo,895,1295,150,150);
-
-  // etiquetas e ícones à esquerda
-  drawSkewTag(42,1452,'VENDEDOR');
-  drawUserCircle(77,1533,62);
-
-  drawSkewTag(42,1667,'CONTATO');
-  drawWhatsappCircle(77,1748,62);
-
-  // textos com limite: NÃO passa por cima da foto
-  fitText(nome,140,1548,390,size,color,weight,fontFamily);
-  fitText(fone,140,1762,390,Math.max(40,size-5),color,weight,fontFamily);
-
-  // foto direita
-  const cx=750, cy=1645, r=245;
-  ctx.save();
-  ctx.shadowColor='rgba(0,0,0,.28)';
-  ctx.shadowBlur=20;
-  ctx.shadowOffsetY=8;
-  ctx.fillStyle='rgba(235,235,235,.95)';
-  ctx.beginPath();ctx.arc(cx,cy,r+10,0,Math.PI*2);ctx.fill();
-  ctx.shadowColor='transparent';
-  ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.clip();
+  if(imgs.bg)drawCover(imgs.bg,0,0,W,H);else{ctx.fillStyle='#0b84e9';ctx.fillRect(0,0,W,H)}
+  if(imgs.topo)ctx.drawImage(imgs.topo,0,0,1080,230);
+  const artX=128,artY=232,artW=824,artH=1112;
+  if(arteImg)drawCover(arteImg,artX,artY,artW,artH);else{ctx.fillStyle='rgba(220,220,220,.95)';ctx.fillRect(artX,artY,artW,artH);ctx.fillStyle='#111';ctx.font='56px Arial';ctx.textAlign='center';ctx.fillText('Área da arte do sorteio',540,790);ctx.textAlign='left'}
+  ctx.fillStyle='rgba(255,255,255,.34)';ctx.fillRect(0,1344,1080,576);
+  if(imgs.seloModelo)ctx.drawImage(imgs.seloModelo,900,1285,180,170);
+  if(imgs.vendor)ctx.drawImage(imgs.vendor,0,1402,380,165);
+  if(imgs.contato)ctx.drawImage(imgs.contato,0,1618,380,170);
+  fitText(nome,138,1547,430,size,color,weight,fontFamily);
+  fitText(fone,138,1763,430,Math.max(42,size-5),color,weight,fontFamily);
   if(fotoImg){
-    const box=r*2;
-    const sc=Math.max(box/fotoImg.width,box/fotoImg.height)*fotoState.zoom;
-    const iw=fotoImg.width*sc, ih=fotoImg.height*sc;
-    ctx.filter='contrast(1.08) saturate(1.08) brightness(1.04)';
-    ctx.drawImage(fotoImg,cx-iw/2+fotoState.x,cy-ih/2+fotoState.y-18,iw,ih);
-    ctx.filter='none';
-  }else{
-    ctx.fillStyle='#ddd';ctx.fillRect(cx-r,cy-r,r*2,r*2);
-    ctx.fillStyle='#111';ctx.font='38px Arial';ctx.textAlign='center';ctx.fillText('foto do vendedor',cx,cy);ctx.textAlign='left';
-  }
-  ctx.restore();
-
-  ctx.strokeStyle='rgba(255,255,255,.92)';
-  ctx.lineWidth=6;
-  ctx.beginPath();ctx.arc(cx,cy,r+10,0,Math.PI*2);ctx.stroke();
+    const x=590,y=1357,w=420,h=535;ctx.save();ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();
+    const sc=Math.min(w/fotoImg.width,h/fotoImg.height)*fotoState.zoom, iw=fotoImg.width*sc, ih=fotoImg.height*sc;
+    ctx.filter='contrast(1.06) saturate(1.06) brightness(1.03)';ctx.drawImage(fotoImg,x+(w-iw)/2+fotoState.x,y+h-ih+fotoState.y,iw,ih);ctx.filter='none';ctx.restore();
+  }else{ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='38px Arial';ctx.textAlign='center';ctx.fillText('foto do vendedor',800,1630);ctx.textAlign='left'}
 }
-function ajustar(t,v){if(t==='zoom')fotoState.zoom=Math.max(.75,Math.min(2.7,fotoState.zoom+v));if(t==='x')fotoState.x+=v;if(t==='y')fotoState.y+=v;desenhar()}
-function resetFoto(){fotoState={zoom:1.06,x:0,y:-8};desenhar()}
-async function copiarLink(){atualizarLink();if(!waLink){alert('Digite um WhatsApp válido com DDD.');return;}await navigator.clipboard.writeText(waLink);alert('Link copiado.')}
-function baixar(){desenhar();canvas.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reino-studio-modelo-azul-hd.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)},'image/png',1)}
-function compartilhar(){desenhar();canvas.toBlob(async blob=>{const file=new File([blob],'reino-studio-modelo-azul-hd.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'Arte Reino da Sorte'});}else baixar();},'image/png',1)}
-async function preload(){imgs.header=await carregarImagem('assets/header-oficial.jpg');imgs.selo=await carregarImagem('assets/selo-vendedor.jpg');imgs.bg=await carregarImagem(fundoSelect.value);desenhar()}
+function ajustar(t,v){if(t==='zoom')fotoState.zoom=Math.max(.55,Math.min(2.8,fotoState.zoom+v));if(t==='x')fotoState.x+=v;if(t==='y')fotoState.y+=v;desenhar()}
+function resetFoto(){fotoState={zoom:1.00,x:0,y:0};desenhar()}
+async function copiarLink(){atualizarLink();if(!waLink){alert('Digite um WhatsApp válido com DDD.');return}await navigator.clipboard.writeText(waLink);alert('Link copiado.')}
+function baixar(){desenhar();canvas.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reino-studio-modelo-identico-hd.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)},'image/png',1)}
+function compartilhar(){desenhar();canvas.toBlob(async blob=>{const file=new File([blob],'reino-studio-modelo-identico-hd.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'Arte Reino da Sorte'})}else baixar()},'image/png',1)}
+async function preload(){imgs.bg=await carregarImagem(fundoSelect.value);imgs.topo=await carregarImagem('assets/topo-modelo.png');imgs.vendor=await carregarImagem('assets/vendor-elementos.png');imgs.contato=await carregarImagem('assets/contato-elementos.png');imgs.seloModelo=await carregarImagem('assets/selo-modelo.png');desenhar()}
 arteInput.addEventListener('change',async()=>{const f=arteInput.files[0];if(f){arteImg=await readFileImage(f);desenhar()}});
-fotoInput.addEventListener('change',async()=>{const f=fotoInput.files[0];if(f){fotoState={zoom:1.06,x:0,y:-8};fotoImg=await readFileImage(f);desenhar()}});
-novosFundosInput.addEventListener('change',async()=>{for(const file of novosFundosInput.files){const img=await readFileImage(file);const id='custom_'+Date.now()+'_'+Math.random();customFundos[id]=img;const opt=document.createElement('option');opt.value=id;opt.textContent='Novo fundo: '+file.name;fundoSelect.appendChild(opt);}});
-fundoSelect.addEventListener('change',async()=>{if(customFundos[fundoSelect.value]) imgs.bg=customFundos[fundoSelect.value];else imgs.bg=await carregarImagem(fundoSelect.value);desenhar()});
+fotoInput.addEventListener('change',async()=>{const f=fotoInput.files[0];if(f){fotoState={zoom:1.00,x:0,y:0};fotoImg=await readFileImage(f);desenhar()}});
+novosFundosInput.addEventListener('change',async()=>{for(const file of novosFundosInput.files){const img=await readFileImage(file);const id='custom_'+Date.now()+'_'+Math.random();customFundos[id]=img;const opt=document.createElement('option');opt.value=id;opt.textContent='Novo fundo: '+file.name;fundoSelect.appendChild(opt)}});
+fundoSelect.addEventListener('change',async()=>{if(customFundos[fundoSelect.value])imgs.bg=customFundos[fundoSelect.value];else imgs.bg=await carregarImagem(fundoSelect.value);desenhar()});
 foneInput.addEventListener('input',()=>{foneInput.value=formatDigits(foneInput.value);desenhar()});
 [nomeInput,corSelect,fonteSelect,tamanhoSelect,boldInput].forEach(el=>{el.addEventListener('input',desenhar);el.addEventListener('change',desenhar)});
 preload();
