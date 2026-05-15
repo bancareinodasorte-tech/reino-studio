@@ -3,90 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>REINO STUDIO V8 MODELO OFICIAL</title>
+<title>REINO STUDIO V8.1 AJUSTES</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#047ce8">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(180deg,#00164f,#047ce8 45%,#00164f);
-  color:#fff;
-  padding:12px;
-}
+body{font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#00164f,#047ce8 45%,#00164f);color:#fff;padding:12px}
 .app{max-width:560px;margin:auto}
-.panel{
-  background:rgba(255,255,255,.97);
-  color:#05205f;
-  border-radius:22px;
-  padding:16px;
-  margin-bottom:16px;
-  box-shadow:0 16px 38px rgba(0,0,0,.30);
-}
-.hero{
-  background:linear-gradient(135deg,#062b86,#0094ff);
-  color:#fff;
-  border:1px solid rgba(255,255,255,.35);
-}
-.hero h1{font-size:22px;font-weight:900}
-.hero p{font-size:13px;margin-top:6px;line-height:1.35;opacity:.92}
+.panel{background:rgba(255,255,255,.97);color:#05205f;border-radius:22px;padding:16px;margin-bottom:16px;box-shadow:0 16px 38px rgba(0,0,0,.30)}
+.hero{background:linear-gradient(135deg,#062b86,#0094ff);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.hero h1{font-size:22px;font-weight:900}.hero p{font-size:13px;margin-top:6px;line-height:1.35;opacity:.92}
 label{font-size:14px;font-weight:900;display:block;margin:13px 0 6px}
-input,select{
-  width:100%;
-  padding:13px 14px;
-  border:1px solid #b7caef;
-  border-radius:14px;
-  font-size:16px;
-  background:#f8fbff;
-}
+input,select{width:100%;padding:13px 14px;border:1px solid #b7caef;border-radius:14px;font-size:16px;background:#f8fbff}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-button{
-  width:100%;
-  border:0;
-  border-radius:16px;
-  padding:14px 12px;
-  font-size:15px;
-  font-weight:900;
-  margin-top:12px;
-}
+button{width:100%;border:0;border-radius:16px;padding:14px 12px;font-size:15px;font-weight:900;margin-top:12px}
 .primary{background:linear-gradient(90deg,#f7bd1c,#ffe680);color:#06205e}
 .secondary{background:linear-gradient(90deg,#0645c8,#0a8fff);color:#fff}
 .green{background:linear-gradient(90deg,#00a83b,#22e071);color:#fff}
 .minirow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .minirow button{font-size:17px;padding:12px 0;margin-top:8px;background:#eaf1ff;color:#063c9f}
 .help{font-size:12px;line-height:1.35;margin-top:10px;color:#16306b}
-.linkbox{
-  font-size:12px;
-  background:#eef4ff;
-  color:#06175c;
-  border:1px solid #c5d5f4;
-  border-radius:13px;
-  padding:11px;
-  margin-top:10px;
-  word-break:break-all;
-}
-.preview-wrap{
-  background:#fff;
-  border-radius:24px;
-  padding:10px;
-  box-shadow:0 16px 40px rgba(0,0,0,.35);
-  overflow:hidden;
-}
+.linkbox{font-size:12px;background:#eef4ff;color:#06175c;border:1px solid #c5d5f4;border-radius:13px;padding:11px;margin-top:10px;word-break:break-all}
+.preview-wrap{background:#fff;border-radius:24px;padding:10px;box-shadow:0 16px 40px rgba(0,0,0,.35);overflow:hidden}
 canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
-@media(max-width:520px){
-  body{padding:10px}
-  .panel{padding:14px;border-radius:18px}
-  .hero h1{font-size:20px}
-  .row{grid-template-columns:1fr 1fr;gap:8px}
-  input,select{font-size:15px}
-}
+@media(max-width:520px){body{padding:10px}.panel{padding:14px;border-radius:18px}.hero h1{font-size:20px}.row{grid-template-columns:1fr 1fr;gap:8px}input,select{font-size:15px}}
 </style>
 </head>
 <body>
 <div class="app">
   <div class="panel hero">
-    <h1>REINO STUDIO V8 OFICIAL</h1>
-    <p>Modelo travado conforme imagem demonstrativa: fundo azul claro preenchendo 100%, topo transparente sobre o fundo, arte central, vendedor/contato oficiais e foto no local correto.</p>
+    <h1>REINO STUDIO V8.1</h1>
+    <p>Ajustado somente com o pedido: fundo oficial real, arte do sorteio sem corte e vendedor/contato fixos.</p>
   </div>
 
   <div class="panel">
@@ -97,314 +44,113 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
     <input type="file" id="fotoInput" accept="image/*">
 
     <div class="row">
-      <div>
-        <label>Nome do vendedor</label>
-        <input type="text" id="nomeInput" placeholder="Nome do vendedor">
-      </div>
-      <div>
-        <label>WhatsApp</label>
-        <input type="tel" id="foneInput" placeholder="88999999999" maxlength="15" inputmode="numeric">
-      </div>
+      <div><label>Nome do vendedor</label><input type="text" id="nomeInput" placeholder="Nome do vendedor"></div>
+      <div><label>WhatsApp</label><input type="tel" id="foneInput" placeholder="88999999999" maxlength="15" inputmode="numeric"></div>
     </div>
 
     <div class="row">
-      <div>
-        <label>Fundo oficial</label>
-        <select id="fundoSelect">
-          <option value="assets/fundo-azul-claro-oficial.jpeg" selected>Azul claro oficial</option>
-        </select>
-      </div>
-      <div>
-        <label>Cor do texto</label>
-        <select id="corSelect">
-          <option value="#000000" selected>Preto</option>
-          <option value="#ffffff">Branco</option>
-          <option value="#ffd84d">Dourado</option>
-          <option value="#073b9a">Azul escuro</option>
-        </select>
-      </div>
+      <div><label>Fundo oficial</label><select id="fundoSelect"><option value="assets/fundo-oficial.jpeg" selected>Fundo oficial azul claro</option></select></div>
+      <div><label>Cor do texto</label><select id="corSelect"><option value="#000000" selected>Preto</option><option value="#ffffff">Branco</option><option value="#ffd84d">Dourado</option><option value="#073b9a">Azul escuro</option></select></div>
     </div>
 
     <label>Adicionar novos fundos durante o uso</label>
     <input type="file" id="novosFundosInput" accept="image/*" multiple>
 
     <div class="row">
-      <div>
-        <label>Fonte</label>
-        <select id="fonteSelect">
-          <option value="Arial">Arial Moderna</option>
-          <option value="Arial Black">Arial Black Forte</option>
-          <option value="Trebuchet MS">Trebuchet</option>
-          <option value="Verdana">Verdana</option>
-          <option value="Tahoma">Tahoma</option>
-          <option value="Georgia">Georgia Elegante</option>
-          <option value="Times New Roman">Times Clássica</option>
-          <option value="Impact">Impact Destaque</option>
-        </select>
-      </div>
-      <div>
-        <label>Tamanho</label>
-        <select id="tamanhoSelect">
-          <option value="48">Pequeno</option>
-          <option value="56" selected>Médio</option>
-          <option value="64">Grande</option>
-          <option value="72">Muito grande</option>
-        </select>
-      </div>
+      <div><label>Fonte</label><select id="fonteSelect"><option value="Arial">Arial Moderna</option><option value="Arial Black">Arial Black Forte</option><option value="Trebuchet MS">Trebuchet</option><option value="Verdana">Verdana</option><option value="Tahoma">Tahoma</option><option value="Georgia">Georgia Elegante</option><option value="Times New Roman">Times Clássica</option><option value="Impact">Impact Destaque</option></select></div>
+      <div><label>Tamanho</label><select id="tamanhoSelect"><option value="48">Pequeno</option><option value="56" selected>Médio</option><option value="64">Grande</option><option value="72">Muito grande</option></select></div>
     </div>
 
     <label><input type="checkbox" id="boldInput" style="width:auto;margin-right:8px"> Texto em negrito</label>
 
     <label>Ajuste fino da foto</label>
-    <div class="minirow">
-      <button onclick="ajustar('zoom',.05)">+</button>
-      <button onclick="ajustar('zoom',-.05)">−</button>
-      <button onclick="ajustar('y',-14)">↑</button>
-      <button onclick="ajustar('y',14)">↓</button>
-    </div>
-    <div class="minirow">
-      <button onclick="ajustar('x',-14)">←</button>
-      <button onclick="ajustar('x',14)">→</button>
-      <button onclick="resetFoto()">Reset</button>
-      <button onclick="copiarLink()">Link</button>
-    </div>
+    <div class="minirow"><button onclick="ajustar('zoom',.05)">+</button><button onclick="ajustar('zoom',-.05)">−</button><button onclick="ajustar('y',-14)">↑</button><button onclick="ajustar('y',14)">↓</button></div>
+    <div class="minirow"><button onclick="ajustar('x',-14)">←</button><button onclick="ajustar('x',14)">→</button><button onclick="resetFoto()">Reset</button><button onclick="copiarLink()">Link</button></div>
 
     <button class="secondary" onclick="desenhar()">VISUALIZAR ARTE</button>
     <button class="primary" onclick="baixar()">BAIXAR PNG HD</button>
     <button class="green" onclick="compartilhar()">SALVAR / COMPARTILHAR</button>
 
     <div class="linkbox" id="linkBox">Digite o WhatsApp para gerar o link automaticamente.</div>
-    <p class="help">Todos os elementos são desenhados sobre o fundo. O sistema usa exatamente as imagens enviadas para topo e vendedor/contato. Não inventa imagem.</p>
+    <p class="help">A arte oficial do sorteio agora entra inteira, sem cortar. Caso sobre espaço, o sistema centraliza mantendo a proporção original.</p>
   </div>
 
-  <div class="preview-wrap">
-    <canvas id="canvas" width="1080" height="1920"></canvas>
-  </div>
+  <div class="preview-wrap"><canvas id="canvas" width="1080" height="1920"></canvas></div>
 </div>
 
 <script>
-const W=1080,H=1920;
-const canvas=document.getElementById('canvas');
-const ctx=canvas.getContext('2d');
-const imgs={};
-let arteImg=null,fotoImg=null,waLink='';
-let customFundos={};
-let fotoState={zoom:1.00,x:0,y:0};
+const W=1080,H=1920, canvas=document.getElementById('canvas'), ctx=canvas.getContext('2d');
+const imgs={}; let arteImg=null,fotoImg=null,waLink=''; let customFundos={}; let fotoState={zoom:1.00,x:0,y:0};
 
-function carregarImagem(src){
-  return new Promise(resolve=>{
-    const img=new Image();
-    img.onload=()=>resolve(img);
-    img.onerror=()=>resolve(null);
-    img.src=src;
-  });
-}
-function readFileImage(file){
-  return new Promise(resolve=>{
-    const r=new FileReader();
-    r.onload=()=>{
-      const img=new Image();
-      img.onload=()=>resolve(img);
-      img.src=r.result;
-    };
-    r.readAsDataURL(file);
-  });
-}
-function drawCover(img,x,y,w,h){
-  if(!img)return;
-  const ir=img.width/img.height,br=w/h;
-  let sx=0,sy=0,sw=img.width,sh=img.height;
-  if(ir>br){
-    sw=img.height*br;
-    sx=(img.width-sw)/2;
-  }else{
-    sh=img.width/br;
-    sy=(img.height-sh)/2;
-  }
-  ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);
-}
-function drawContain(img,x,y,w,h){
-  if(!img)return;
-  const r=Math.min(w/img.width,h/img.height);
-  const nw=img.width*r,nh=img.height*r;
-  ctx.drawImage(img,x+(w-nw)/2,y+(h-nh)/2,nw,nh);
-}
-function formatDigits(raw){
-  let n=(raw||'').replace(/\D/g,'').slice(0,11);
-  if(n.length<=2)return n;
-  if(n.length<=7)return '('+n.slice(0,2)+') '+n.slice(2);
-  return '('+n.slice(0,2)+') '+n.slice(2,7)+'-'+n.slice(7,11);
-}
-function atualizarLink(){
-  const d=(foneInput.value||'').replace(/\D/g,'').slice(0,11);
-  if(d.length===11){
-    waLink='https://wa.me/55'+d;
-    linkBox.textContent=waLink;
-  }else{
-    waLink='';
-    linkBox.textContent='Contato incompleto. Digite DDD + número com 11 dígitos.';
-  }
-}
-function fitText(text,x,y,maxW,fontSize,color,weight,fontFamily){
-  let size=fontSize;
-  do{
-    ctx.font=`${weight} ${size}px "${fontFamily}", Arial, sans-serif`;
-    if(ctx.measureText(text).width<=maxW)break;
-    size-=2;
-  }while(size>30);
-  ctx.fillStyle=color;
-  ctx.fillText(text,x,y);
-}
+function carregarImagem(src){return new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>resolve(null);img.src=src;});}
+function readFileImage(file){return new Promise(resolve=>{const r=new FileReader();r.onload=()=>{const img=new Image();img.onload=()=>resolve(img);img.src=r.result;};r.readAsDataURL(file);});}
+function drawCover(img,x,y,w,h){if(!img)return;const ir=img.width/img.height,br=w/h;let sx=0,sy=0,sw=img.width,sh=img.height;if(ir>br){sw=img.height*br;sx=(img.width-sw)/2}else{sh=img.width/br;sy=(img.height-sh)/2}ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h)}
+function drawContain(img,x,y,w,h){if(!img)return;const r=Math.min(w/img.width,h/img.height);const nw=img.width*r,nh=img.height*r;ctx.drawImage(img,x+(w-nw)/2,y+(h-nh)/2,nw,nh)}
+function formatDigits(raw){let n=(raw||'').replace(/\D/g,'').slice(0,11);if(n.length<=2)return n;if(n.length<=7)return '('+n.slice(0,2)+') '+n.slice(2);return '('+n.slice(0,2)+') '+n.slice(2,7)+'-'+n.slice(7,11)}
+function atualizarLink(){const d=(foneInput.value||'').replace(/\D/g,'').slice(0,11);if(d.length===11){waLink='https://wa.me/55'+d;linkBox.textContent=waLink}else{waLink='';linkBox.textContent='Contato incompleto. Digite DDD + número com 11 dígitos.'}}
+function fitText(text,x,y,maxW,fontSize,color,weight,fontFamily){let size=fontSize;do{ctx.font=`${weight} ${size}px "${fontFamily}", Arial, sans-serif`;if(ctx.measureText(text).width<=maxW)break;size-=2}while(size>30);ctx.fillStyle=color;ctx.fillText(text,x,y)}
 
 function desenhar(){
   atualizarLink();
-
-  const color=corSelect.value;
-  const fontFamily=fonteSelect.value;
-  const weight=boldInput.checked?'900':'400';
-  const size=parseInt(tamanhoSelect.value,10);
-  const nome=(nomeInput.value||'Nome do vendedor').trim();
-  const fone=formatDigits(foneInput.value)||'(00) 0 0000-0000';
+  const color=corSelect.value, fontFamily=fonteSelect.value, weight=boldInput.checked?'900':'400', size=parseInt(tamanhoSelect.value,10);
+  const nome=(nomeInput.value||'Nome do vendedor').trim(), fone=formatDigits(foneInput.value)||'(00) 0 0000-0000';
 
   ctx.clearRect(0,0,W,H);
 
-  // 1. FUNDO AZUL CLARO OCUPANDO 100% DA IMAGEM GERADA
-  if(imgs.bg)drawCover(imgs.bg,0,0,W,H);
-  else{ctx.fillStyle='#17a4ff';ctx.fillRect(0,0,W,H);}
+  // FUNDO OFICIAL REAL PREENCHENDO TODA A ARTE GERADA
+  if(imgs.bg) drawCover(imgs.bg,0,0,W,H);
+  else {ctx.fillStyle='#18a5ff';ctx.fillRect(0,0,W,H)}
 
-  // 2. TOPO TRANSPARENTE, POR CIMA DO FUNDO, FIXO
-  if(imgs.topo)drawContain(imgs.topo,105,20,870,205);
+  // TOPO FIXO SOBRE O FUNDO
+  if(imgs.topo) drawContain(imgs.topo,105,20,870,205);
 
-  // 3. ÁREA DA ARTE DO SORTEIO - EXATAMENTE NO MODELO
+  // ARTE OFICIAL DO SORTEIO SEM CORTAR
   const artX=128,artY=235,artW=824,artH=1112;
   if(arteImg){
-    drawCover(arteImg,artX,artY,artW,artH);
+    ctx.fillStyle='rgba(255,255,255,0)';
+    ctx.fillRect(artX,artY,artW,artH);
+    drawContain(arteImg,artX,artY,artW,artH);
   }else{
     ctx.fillStyle='rgba(220,220,220,.96)';
     ctx.fillRect(artX,artY,artW,artH);
-    ctx.fillStyle='#111';
-    ctx.font='56px Arial';
-    ctx.textAlign='center';
-    ctx.fillText('Área da arte do sorteio',540,790);
-    ctx.textAlign='left';
+    ctx.fillStyle='#111';ctx.font='56px Arial';ctx.textAlign='center';ctx.fillText('Área da arte do sorteio',540,790);ctx.textAlign='left';
   }
 
-  // 4. ELEMENTO OFICIAL VENDEDOR/CONTATO COM ÍCONES, POR CIMA DO FUNDO
-  if(imgs.vendedorContato)drawContain(imgs.vendedorContato,-4,1392,430,410);
+  // VENDEDOR E CONTATO FIXO COMO MÁSCARA OFICIAL
+  if(imgs.vendedorContato) drawContain(imgs.vendedorContato,-4,1392,430,410);
 
-  // 5. TEXTOS NAS POSIÇÕES DO MODELO
+  // TEXTOS
   fitText(nome,138,1548,420,size,color,weight,fontFamily);
   fitText(fone,138,1765,420,Math.max(42,size-5),color,weight,fontFamily);
 
-  // 6. FOTO DO VENDEDOR, MESMA ÁREA DO MODELO
+  // FOTO
   const cx=755,cy=1634,r=248;
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(cx,cy,r,0,Math.PI*2);
-  ctx.closePath();
-  ctx.clip();
-
+  ctx.save();ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.clip();
   if(fotoImg){
-    const box=r*2;
-    const sc=Math.max(box/fotoImg.width,box/fotoImg.height)*fotoState.zoom;
-    const iw=fotoImg.width*sc,ih=fotoImg.height*sc;
+    const box=r*2, sc=Math.max(box/fotoImg.width,box/fotoImg.height)*fotoState.zoom, iw=fotoImg.width*sc, ih=fotoImg.height*sc;
     ctx.filter='contrast(1.06) saturate(1.06) brightness(1.03)';
     ctx.drawImage(fotoImg,cx-iw/2+fotoState.x,cy-ih/2+fotoState.y,iw,ih);
     ctx.filter='none';
   }else{
-    ctx.fillStyle='rgba(220,220,220,.78)';
-    ctx.fillRect(cx-r,cy-r,r*2,r*2);
-    ctx.fillStyle='#111';
-    ctx.font='38px Arial';
-    ctx.textAlign='center';
-    ctx.fillText('foto do vendedor',cx,cy);
-    ctx.textAlign='left';
+    ctx.fillStyle='rgba(220,220,220,.78)';ctx.fillRect(cx-r,cy-r,r*2,r*2);
+    ctx.fillStyle='#111';ctx.font='38px Arial';ctx.textAlign='center';ctx.fillText('foto do vendedor',cx,cy);ctx.textAlign='left';
   }
   ctx.restore();
+  ctx.strokeStyle='rgba(255,255,255,.42)';ctx.lineWidth=4;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.stroke();
+}
+function ajustar(t,v){if(t==='zoom')fotoState.zoom=Math.max(.55,Math.min(2.8,fotoState.zoom+v));if(t==='x')fotoState.x+=v;if(t==='y')fotoState.y+=v;desenhar()}
+function resetFoto(){fotoState={zoom:1.00,x:0,y:0};desenhar()}
+async function copiarLink(){atualizarLink();if(!waLink){alert('Digite um WhatsApp válido com DDD.');return}await navigator.clipboard.writeText(waLink);alert('Link copiado.')}
+function baixar(){desenhar();canvas.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reino-studio-v8-1-ajustes.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)},'image/png',1)}
+function compartilhar(){desenhar();canvas.toBlob(async blob=>{const file=new File([blob],'reino-studio-v8-1-ajustes.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'Arte Reino da Sorte'})}else baixar()},'image/png',1)}
 
-  // sombra/contorno leve do círculo conforme demonstrativo
-  ctx.strokeStyle='rgba(255,255,255,.42)';
-  ctx.lineWidth=4;
-  ctx.beginPath();
-  ctx.arc(cx,cy,r,0,Math.PI*2);
-  ctx.stroke();
-}
-
-function ajustar(t,v){
-  if(t==='zoom')fotoState.zoom=Math.max(.55,Math.min(2.8,fotoState.zoom+v));
-  if(t==='x')fotoState.x+=v;
-  if(t==='y')fotoState.y+=v;
-  desenhar();
-}
-function resetFoto(){
-  fotoState={zoom:1.00,x:0,y:0};
-  desenhar();
-}
-async function copiarLink(){
-  atualizarLink();
-  if(!waLink){alert('Digite um WhatsApp válido com DDD.');return;}
-  await navigator.clipboard.writeText(waLink);
-  alert('Link copiado.');
-}
-function baixar(){
-  desenhar();
-  canvas.toBlob(blob=>{
-    const a=document.createElement('a');
-    a.href=URL.createObjectURL(blob);
-    a.download='reino-studio-v8-modelo-oficial.png';
-    a.click();
-    setTimeout(()=>URL.revokeObjectURL(a.href),2000);
-  },'image/png',1);
-}
-function compartilhar(){
-  desenhar();
-  canvas.toBlob(async blob=>{
-    const file=new File([blob],'reino-studio-v8-modelo-oficial.png',{type:'image/png'});
-    if(navigator.canShare&&navigator.canShare({files:[file]})){
-      await navigator.share({files:[file],title:'Arte Reino da Sorte'});
-    }else baixar();
-  },'image/png',1);
-}
-
-async function preload(){
-  imgs.bg=await carregarImagem(fundoSelect.value);
-  imgs.topo=await carregarImagem('assets/topo-vendedores-autorizados.png');
-  imgs.vendedorContato=await carregarImagem('assets/vendedor-contato-oficial.png');
-  desenhar();
-}
-
-arteInput.addEventListener('change',async()=>{
-  const f=arteInput.files[0];
-  if(f){arteImg=await readFileImage(f);desenhar();}
-});
-fotoInput.addEventListener('change',async()=>{
-  const f=fotoInput.files[0];
-  if(f){fotoState={zoom:1.00,x:0,y:0};fotoImg=await readFileImage(f);desenhar();}
-});
-novosFundosInput.addEventListener('change',async()=>{
-  for(const file of novosFundosInput.files){
-    const img=await readFileImage(file);
-    const id='custom_'+Date.now()+'_'+Math.random();
-    customFundos[id]=img;
-    const opt=document.createElement('option');
-    opt.value=id;
-    opt.textContent='Novo fundo: '+file.name;
-    fundoSelect.appendChild(opt);
-  }
-});
-fundoSelect.addEventListener('change',async()=>{
-  if(customFundos[fundoSelect.value])imgs.bg=customFundos[fundoSelect.value];
-  else imgs.bg=await carregarImagem(fundoSelect.value);
-  desenhar();
-});
-foneInput.addEventListener('input',()=>{
-  foneInput.value=formatDigits(foneInput.value);
-  desenhar();
-});
-[nomeInput,corSelect,fonteSelect,tamanhoSelect,boldInput].forEach(el=>{
-  el.addEventListener('input',desenhar);
-  el.addEventListener('change',desenhar);
-});
+async function preload(){imgs.bg=await carregarImagem(fundoSelect.value);imgs.topo=await carregarImagem('assets/topo-vendedores-autorizados.png');imgs.vendedorContato=await carregarImagem('assets/vendedor-contato-oficial.png');desenhar();}
+arteInput.addEventListener('change',async()=>{const f=arteInput.files[0];if(f){arteImg=await readFileImage(f);desenhar()}});
+fotoInput.addEventListener('change',async()=>{const f=fotoInput.files[0];if(f){fotoState={zoom:1.00,x:0,y:0};fotoImg=await readFileImage(f);desenhar()}});
+novosFundosInput.addEventListener('change',async()=>{for(const file of novosFundosInput.files){const img=await readFileImage(file);const id='custom_'+Date.now()+'_'+Math.random();customFundos[id]=img;const opt=document.createElement('option');opt.value=id;opt.textContent='Novo fundo: '+file.name;fundoSelect.appendChild(opt)}});
+fundoSelect.addEventListener('change',async()=>{if(customFundos[fundoSelect.value])imgs.bg=customFundos[fundoSelect.value];else imgs.bg=await carregarImagem(fundoSelect.value);desenhar()});
+foneInput.addEventListener('input',()=>{foneInput.value=formatDigits(foneInput.value);desenhar()});
+[nomeInput,corSelect,fonteSelect,tamanhoSelect,boldInput].forEach(el=>{el.addEventListener('input',desenhar);el.addEventListener('change',desenhar)});
 preload();
 </script>
 </body>
