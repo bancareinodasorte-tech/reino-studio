@@ -1,8 +1,8 @@
 {
-  "name": "REINO STUDIO V8.1 AJUSTES",
+  "name": "REINO STUDIO MODELO AZUL",
   "short_name": "REINO STUDIO",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#047ce8",
-  "theme_color": "#047ce8"
+  "background_color": "#087BEA",
+  "theme_color": "#087BEA"
 }

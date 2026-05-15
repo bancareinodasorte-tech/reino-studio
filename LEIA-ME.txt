@@ -1,11 +1,18 @@
-REINO STUDIO - LAYOUT FIXO
+REINO STUDIO - MODELO AZUL CORRETO
 
-Suba todos os arquivos mantendo a pasta assets.
+Arquivos obrigatórios:
+- index.html
+- manifest.json
+- sw.js
+- pasta assets
 
-Troque apenas:
-- fundo-azul-oficial.png
+A pasta assets já contém imagens reais:
+- fundo-oficial.jpg
 - topo-vendedores-autorizados.png
 - vendedor-contato.png
-- selo-vendedor.png
-- exemplo-arte.png
-- foto-vendedor.png
+
+Para subir no GitHub:
+1. Apague os arquivos antigos do repositório.
+2. Envie o index.html, manifest.json, sw.js e a pasta assets inteira.
+3. Aguarde o GitHub Pages atualizar.
+4. Abra o link em aba anônima ou limpe cache se aparecer versão antiga.
