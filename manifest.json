@@ -1,8 +1,9 @@
 {
-  "name": "REINO STUDIO V4.3 OFICIAL HD",
+  "name": "REINO STUDIO V5 PREMIUM REAL",
   "short_name": "REINO STUDIO",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#063c9f",
-  "theme_color": "#063c9f"
+  "background_color": "#052b86",
+  "theme_color": "#052b86",
+  "icons": []
 }
