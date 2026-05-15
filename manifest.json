@@ -1,9 +1,8 @@
 {
-  "name": "REINO STUDIO V5 PREMIUM REAL",
+  "name": "REINO STUDIO V6 MODELO AZUL",
   "short_name": "REINO STUDIO",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#052b86",
-  "theme_color": "#052b86",
-  "icons": []
+  "theme_color": "#052b86"
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>REINO STUDIO V5 PREMIUM REAL</title>
+<title>REINO STUDIO V6 MODELO AZUL OFICIAL</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#052b86">
 <style>
@@ -12,7 +12,7 @@ body{font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#0
 .app{max-width:560px;margin:auto}
 .panel{background:rgba(255,255,255,.97);color:#05205f;border-radius:22px;padding:16px;margin-bottom:16px;box-shadow:0 16px 38px rgba(0,0,0,.30)}
 .hero{background:linear-gradient(135deg,#062b86,#0094ff);color:#fff;border:1px solid rgba(255,255,255,.35)}
-.hero h1{font-size:23px;font-weight:900}.hero p{font-size:13px;margin-top:6px;line-height:1.35;opacity:.92}
+.hero h1{font-size:22px;font-weight:900}.hero p{font-size:13px;margin-top:6px;line-height:1.35;opacity:.92}
 label{font-size:14px;font-weight:900;display:block;margin:13px 0 6px}
 input,select{width:100%;padding:13px 14px;border:1px solid #b7caef;border-radius:14px;font-size:16px;background:#f8fbff}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -32,8 +32,8 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
 <body>
 <div class="app">
   <div class="panel hero">
-    <h1>REINO STUDIO V5 PREMIUM REAL</h1>
-    <p>Versão completa com assets, Canvas HD 1080x1920, layout premium integrado, textos ajustáveis, fundos oficiais e download PNG.</p>
+    <h1>REINO STUDIO V6 MODELO AZUL</h1>
+    <p>Versão reconstruída para gerar conforme o modelo azul: fundo 100%, cabeçalho por cima do fundo, arte central, selo fixo, foto e dados no rodapé.</p>
   </div>
 
   <div class="panel">
@@ -58,7 +58,7 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
       <div>
         <label>Fundo oficial</label>
         <select id="fundoSelect">
-          <option value="assets/fundo-azul-premium.jpg">Azul dinheiro premium</option>
+          <option value="assets/fundo-azul-premium.jpg" selected>Azul oficial modelo</option>
           <option value="assets/fundo-azul-marca.png">Azul marca d’água</option>
           <option value="assets/fundo-azul-escuro.jpg">Azul escuro</option>
           <option value="assets/fundo-verde-premium.jpg">Verde premium</option>
@@ -67,11 +67,10 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
       <div>
         <label>Cor do texto</label>
         <select id="corSelect">
+          <option value="#000000" selected>Preto</option>
           <option value="#ffffff">Branco</option>
-          <option value="#000000">Preto</option>
           <option value="#ffd84d">Dourado</option>
           <option value="#073b9a">Azul escuro</option>
-          <option value="#0bff72">Verde claro</option>
         </select>
       </div>
     </div>
@@ -90,18 +89,16 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
           <option value="Tahoma">Tahoma</option>
           <option value="Georgia">Georgia Elegante</option>
           <option value="Times New Roman">Times Clássica</option>
-          <option value="Courier New">Digital/Courier</option>
           <option value="Impact">Impact Destaque</option>
-          <option value="Comic Sans MS">Manual/Descontraída</option>
         </select>
       </div>
       <div>
         <label>Tamanho</label>
         <select id="tamanhoSelect">
-          <option value="42">Pequeno</option>
-          <option value="50" selected>Médio</option>
-          <option value="58">Grande</option>
-          <option value="66">Muito grande</option>
+          <option value="44">Pequeno</option>
+          <option value="52" selected>Médio</option>
+          <option value="60">Grande</option>
+          <option value="68">Muito grande</option>
         </select>
       </div>
     </div>
@@ -127,7 +124,7 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
     <button class="green" onclick="compartilhar()">SALVAR / COMPARTILHAR</button>
 
     <div class="linkbox" id="linkBox">Digite o WhatsApp para gerar o link automaticamente.</div>
-    <p class="help">A V5 usa um layout premium integrado. No navegador, salvar direto na Galeria depende do sistema; o botão “Salvar/Compartilhar” abre a tela nativa quando permitido.</p>
+    <p class="help">A base visual segue o modelo azul: o fundo escolhido cobre toda a arte e os elementos ficam sobre ele em posição fixa.</p>
   </div>
 
   <div class="preview-wrap">
@@ -142,7 +139,7 @@ const ctx=canvas.getContext('2d');
 const imgs={};
 let arteImg=null, fotoImg=null, waLink='';
 let customFundos={};
-let fotoState={zoom:1.08,x:0,y:-10};
+let fotoState={zoom:1.06,x:0,y:-8};
 
 function carregarImagem(src){
   return new Promise(resolve=>{
@@ -207,39 +204,40 @@ function fitText(text,x,y,maxW,fontSize,color,weight,fontFamily){
   ctx.fillStyle=color;
   ctx.fillText(text,x,y);
 }
-function drawPremiumPill(x,y,w,h,title,value,color,fontSize,fontFamily,weight){
+function drawSkewTag(x,y,text){
   ctx.save();
-  ctx.shadowColor='rgba(0,0,0,.25)';
-  ctx.shadowBlur=18;
-  ctx.shadowOffsetY=6;
-  const grad=ctx.createLinearGradient(x,y,x+w,y+h);
-  grad.addColorStop(0,'rgba(3,35,118,.95)');
-  grad.addColorStop(1,'rgba(0,91,210,.88)');
+  ctx.translate(x,y);
+  ctx.transform(1,0,-0.10,1,0,0);
+  const grad=ctx.createLinearGradient(0,0,260,80);
+  grad.addColorStop(0,'#072c84');
+  grad.addColorStop(1,'#0050c6');
   ctx.fillStyle=grad;
-  roundRect(x,y,w,h,24);
+  roundRect(0,0,285,78,8);
   ctx.fill();
   ctx.lineWidth=4;
-  ctx.strokeStyle='rgba(244,198,74,.95)';
+  ctx.strokeStyle='#d9ad32';
   ctx.stroke();
-  ctx.shadowColor='transparent';
+  ctx.setTransform(1,0,0,1,0,0);
   ctx.fillStyle='#ffe26a';
-  ctx.font='900 30px Arial Black';
-  ctx.fillText(title,x+28,y+42);
-  fitText(value,x+28,y+98,w-56,fontSize,color,weight,fontFamily);
+  ctx.font='900 33px Arial Black';
+  ctx.textAlign='center';
+  ctx.fillText(text,x+140,y+50);
+  ctx.textAlign='left';
   ctx.restore();
 }
-function drawWhatsappIcon(cx,cy,r){
+function drawWhatsappCircle(cx,cy,r){
   ctx.save();
-  const g=ctx.createRadialGradient(cx-18,cy-18,8,cx,cy,r);
-  g.addColorStop(0,'#6dff98');g.addColorStop(1,'#00a030');
+  const g=ctx.createRadialGradient(cx-20,cy-20,10,cx,cy,r);
+  g.addColorStop(0,'#65ff94');g.addColorStop(1,'#00a02f');
   ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();
   ctx.lineWidth=5;ctx.strokeStyle='#fff';ctx.stroke();
-  ctx.fillStyle='#fff';ctx.font='900 66px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('☎',cx,cy+2);
+  ctx.fillStyle='#fff';ctx.font='900 66px Arial';ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText('☎',cx,cy+2);
   ctx.restore();
 }
-function drawUserIcon(cx,cy,r){
+function drawUserCircle(cx,cy,r){
   ctx.save();
-  const g=ctx.createRadialGradient(cx-18,cy-18,8,cx,cy,r);
+  const g=ctx.createRadialGradient(cx-20,cy-20,10,cx,cy,r);
   g.addColorStop(0,'#ffe985');g.addColorStop(1,'#c68b08');
   ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();
   ctx.lineWidth=5;ctx.strokeStyle='#fff';ctx.stroke();
@@ -249,6 +247,7 @@ function drawUserIcon(cx,cy,r){
 }
 function desenhar(){
   atualizarLink();
+
   const color=corSelect.value;
   const fontFamily=fonteSelect.value;
   const weight=boldInput.checked?'900':'400';
@@ -258,101 +257,83 @@ function desenhar(){
 
   ctx.clearRect(0,0,W,H);
 
-  // Fundo completo
+  // FUNDO 100% ATÉ O TOPO
   if(imgs.bg) drawCover(imgs.bg,0,0,W,H);
-  else{ctx.fillStyle='#d9ecff';ctx.fillRect(0,0,W,H);}
+  else{ctx.fillStyle='#0b84e9';ctx.fillRect(0,0,W,H);}
 
-  // véu premium para organização
-  const topGrad=ctx.createLinearGradient(0,0,0,H);
-  topGrad.addColorStop(0,'rgba(255,255,255,.94)');
-  topGrad.addColorStop(.16,'rgba(255,255,255,.70)');
-  topGrad.addColorStop(.32,'rgba(255,255,255,.05)');
-  topGrad.addColorStop(.67,'rgba(255,255,255,.05)');
-  topGrad.addColorStop(.78,'rgba(255,255,255,.83)');
-  topGrad.addColorStop(1,'rgba(255,255,255,.92)');
-  ctx.fillStyle=topGrad;ctx.fillRect(0,0,W,H);
+  // leve clareamento apenas para leitura, sem remover o fundo
+  ctx.fillStyle='rgba(255,255,255,.08)';
+  ctx.fillRect(0,0,W,H);
 
-  // Header integrado
-  ctx.save();
-  ctx.shadowColor='rgba(0,0,0,.18)';ctx.shadowBlur=22;ctx.shadowOffsetY=8;
-  ctx.fillStyle='rgba(255,255,255,.95)';
-  roundRect(120,26,840,170,26);ctx.fill();
-  ctx.shadowColor='transparent';
-  if(imgs.header) drawContain(imgs.header,148,46,784,125);
+  // CABEÇALHO EXATAMENTE SOBRE O FUNDO, NO TOPO
+  if(imgs.header) drawContain(imgs.header,132,24,816,175);
   else{
-    ctx.fillStyle='#f4c64a';ctx.font='900 54px Arial Black';ctx.textAlign='center';ctx.fillText('VENDEDORES AUTORIZADOS',540,100);
-    ctx.fillStyle='#063c9f';ctx.font='900 38px Arial';ctx.fillText('Reino da Sorte',540,150);ctx.textAlign='left';
+    ctx.fillStyle='#f4c64a';ctx.font='900 54px Arial Black';ctx.textAlign='center';ctx.fillText('VENDEDORES AUTORIZADOS',540,88);
+    ctx.fillStyle='#063c9f';ctx.font='900 38px Arial';ctx.fillText('Reino da Sorte',540,145);ctx.textAlign='left';
   }
-  ctx.restore();
 
-  // Card da arte
-  ctx.save();
-  ctx.shadowColor='rgba(0,0,0,.35)';ctx.shadowBlur=30;ctx.shadowOffsetY=14;
-  ctx.fillStyle='rgba(255,255,255,.98)';
-  roundRect(104,210,872,1065,18);ctx.fill();
-  ctx.shadowColor='transparent';
-  ctx.clip();
-  if(arteImg) drawCover(arteImg,116,222,848,1041);
-  else{ctx.fillStyle='#ddd';ctx.fillRect(116,222,848,1041);ctx.fillStyle='#111';ctx.font='58px Arial';ctx.textAlign='center';ctx.fillText('Área da arte do sorteio',540,760);ctx.textAlign='left';}
-  ctx.restore();
+  // ARTE PRINCIPAL - posição semelhante ao modelo azul
+  const artX=132, artY=235, artW=816, artH=1110;
+  if(arteImg) drawCover(arteImg,artX,artY,artW,artH);
+  else{
+    ctx.fillStyle='rgba(220,220,220,.95)';
+    ctx.fillRect(artX,artY,artW,artH);
+    ctx.fillStyle='#111';ctx.font='56px Arial';ctx.textAlign='center';ctx.fillText('Área da arte do sorteio',540,790);ctx.textAlign='left';
+  }
 
-  // Bloco inferior único premium
-  ctx.save();
-  ctx.shadowColor='rgba(0,0,0,.20)';ctx.shadowBlur=30;ctx.shadowOffsetY=-4;
-  ctx.fillStyle='rgba(255,255,255,.84)';
-  roundRect(40,1290,1000,570,34);ctx.fill();
-  ctx.shadowColor='transparent';
-  const glass=ctx.createLinearGradient(0,1290,0,1860);
-  glass.addColorStop(0,'rgba(255,255,255,.35)');
-  glass.addColorStop(1,'rgba(255,255,255,.72)');
-  ctx.fillStyle=glass;roundRect(40,1290,1000,570,34);ctx.fill();
-  ctx.restore();
+  // área inferior translúcida, como o modelo azul
+  ctx.fillStyle='rgba(255,255,255,.38)';
+  ctx.fillRect(0,1350,W,570);
 
-  // Foto em moldura premium
-  const cx=760, cy=1582, r=245;
+  // selo fixo no canto superior direito do rodapé, como modelo
+  if(imgs.selo) drawContain(imgs.selo,895,1295,150,150);
+
+  // etiquetas e ícones à esquerda
+  drawSkewTag(42,1452,'VENDEDOR');
+  drawUserCircle(77,1533,62);
+
+  drawSkewTag(42,1667,'CONTATO');
+  drawWhatsappCircle(77,1748,62);
+
+  // textos com limite: NÃO passa por cima da foto
+  fitText(nome,140,1548,390,size,color,weight,fontFamily);
+  fitText(fone,140,1762,390,Math.max(40,size-5),color,weight,fontFamily);
+
+  // foto direita
+  const cx=750, cy=1645, r=245;
   ctx.save();
-  ctx.shadowColor='rgba(0,0,0,.35)';ctx.shadowBlur=26;ctx.shadowOffsetY=10;
-  ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(cx,cy,r+12,0,Math.PI*2);ctx.fill();
+  ctx.shadowColor='rgba(0,0,0,.28)';
+  ctx.shadowBlur=20;
+  ctx.shadowOffsetY=8;
+  ctx.fillStyle='rgba(235,235,235,.95)';
+  ctx.beginPath();ctx.arc(cx,cy,r+10,0,Math.PI*2);ctx.fill();
   ctx.shadowColor='transparent';
   ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.clip();
-  ctx.fillStyle='#e9e9e9';ctx.fillRect(cx-r,cy-r,r*2,r*2);
   if(fotoImg){
     const box=r*2;
-    const sc=Math.max(box/fotoImg.width, box/fotoImg.height)*fotoState.zoom;
+    const sc=Math.max(box/fotoImg.width,box/fotoImg.height)*fotoState.zoom;
     const iw=fotoImg.width*sc, ih=fotoImg.height*sc;
     ctx.filter='contrast(1.08) saturate(1.08) brightness(1.04)';
-    ctx.drawImage(fotoImg,cx-iw/2+fotoState.x,cy-ih/2+fotoState.y-22,iw,ih);
+    ctx.drawImage(fotoImg,cx-iw/2+fotoState.x,cy-ih/2+fotoState.y-18,iw,ih);
     ctx.filter='none';
   }else{
-    ctx.fillStyle='#111';ctx.font='42px Arial';ctx.textAlign='center';ctx.fillText('foto do vendedor',cx,cy);ctx.textAlign='left';
+    ctx.fillStyle='#ddd';ctx.fillRect(cx-r,cy-r,r*2,r*2);
+    ctx.fillStyle='#111';ctx.font='38px Arial';ctx.textAlign='center';ctx.fillText('foto do vendedor',cx,cy);ctx.textAlign='left';
   }
   ctx.restore();
 
-  // Selo integrado no canto da moldura inferior, não solto na arte
-  ctx.save();
-  ctx.shadowColor='rgba(0,0,0,.28)';ctx.shadowBlur=14;ctx.shadowOffsetY=6;
-  if(imgs.selo) drawContain(imgs.selo,900,1250,130,130);
-  ctx.restore();
-
-  // Dados alinhados, com limite para não invadir foto
-  drawPremiumPill(82,1392,470,125,'VENDEDOR',nome,color,size,fontFamily,weight);
-  drawPremiumPill(82,1585,470,125,'CONTATO',fone,color,Math.max(38,size-6),fontFamily,weight);
-  drawUserIcon(93,1455,58);
-  drawWhatsappIcon(93,1648,58);
-
-  // assinatura visual discreta
-  ctx.fillStyle='rgba(6,32,94,.16)';
-  ctx.font='900 28px Arial';
-  ctx.fillText('REINO DA SORTE',70,1835);
+  ctx.strokeStyle='rgba(255,255,255,.92)';
+  ctx.lineWidth=6;
+  ctx.beginPath();ctx.arc(cx,cy,r+10,0,Math.PI*2);ctx.stroke();
 }
-function ajustar(t,v){if(t==='zoom')fotoState.zoom=Math.max(.75,Math.min(2.6,fotoState.zoom+v));if(t==='x')fotoState.x+=v;if(t==='y')fotoState.y+=v;desenhar()}
-function resetFoto(){fotoState={zoom:1.08,x:0,y:-10};desenhar()}
+function ajustar(t,v){if(t==='zoom')fotoState.zoom=Math.max(.75,Math.min(2.7,fotoState.zoom+v));if(t==='x')fotoState.x+=v;if(t==='y')fotoState.y+=v;desenhar()}
+function resetFoto(){fotoState={zoom:1.06,x:0,y:-8};desenhar()}
 async function copiarLink(){atualizarLink();if(!waLink){alert('Digite um WhatsApp válido com DDD.');return;}await navigator.clipboard.writeText(waLink);alert('Link copiado.')}
-function baixar(){desenhar();canvas.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reino-studio-v5-premium-hd.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)},'image/png',1)}
-function compartilhar(){desenhar();canvas.toBlob(async blob=>{const file=new File([blob],'reino-studio-v5-premium-hd.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'Arte Reino da Sorte'});}else baixar();},'image/png',1)}
+function baixar(){desenhar();canvas.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reino-studio-modelo-azul-hd.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)},'image/png',1)}
+function compartilhar(){desenhar();canvas.toBlob(async blob=>{const file=new File([blob],'reino-studio-modelo-azul-hd.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'Arte Reino da Sorte'});}else baixar();},'image/png',1)}
 async function preload(){imgs.header=await carregarImagem('assets/header-oficial.jpg');imgs.selo=await carregarImagem('assets/selo-vendedor.jpg');imgs.bg=await carregarImagem(fundoSelect.value);desenhar()}
 arteInput.addEventListener('change',async()=>{const f=arteInput.files[0];if(f){arteImg=await readFileImage(f);desenhar()}});
-fotoInput.addEventListener('change',async()=>{const f=fotoInput.files[0];if(f){fotoState={zoom:1.08,x:0,y:-10};fotoImg=await readFileImage(f);desenhar()}});
+fotoInput.addEventListener('change',async()=>{const f=fotoInput.files[0];if(f){fotoState={zoom:1.06,x:0,y:-8};fotoImg=await readFileImage(f);desenhar()}});
 novosFundosInput.addEventListener('change',async()=>{for(const file of novosFundosInput.files){const img=await readFileImage(file);const id='custom_'+Date.now()+'_'+Math.random();customFundos[id]=img;const opt=document.createElement('option');opt.value=id;opt.textContent='Novo fundo: '+file.name;fundoSelect.appendChild(opt);}});
 fundoSelect.addEventListener('change',async()=>{if(customFundos[fundoSelect.value]) imgs.bg=customFundos[fundoSelect.value];else imgs.bg=await carregarImagem(fundoSelect.value);desenhar()});
 foneInput.addEventListener('input',()=>{foneInput.value=formatDigits(foneInput.value);desenhar()});
