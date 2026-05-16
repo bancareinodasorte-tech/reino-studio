@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>REINO STUDIO - TESTE FUNDO PRONTO</title>
+<title>REINO STUDIO - FUNDOS PRONTOS</title>
 <meta name="theme-color" content="#087BEA">
+<link rel="manifest" href="manifest.json">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,Helvetica,sans-serif;background:#001a58;color:#fff;padding:12px}
@@ -31,289 +32,85 @@ canvas{display:block;width:100%;height:auto;border-radius:18px;background:#fff}
 </head>
 <body>
 <div class="app">
-
-  <div class="card hero">
-    <h1>REINO STUDIO - TESTE FUNDO PRONTO</h1>
-    <p>Agora o fundo já vem pronto com topo, selo, vendedor e contato fixos. O sistema só preenche arte, foto, nome e telefone.</p>
-  </div>
-
-  <div class="card">
-    <label>Arte oficial do sorteio</label>
-    <input type="file" id="arteInput" accept="image/*">
-
-    <label>Foto do vendedor</label>
-    <input type="file" id="fotoInput" accept="image/*">
-
-    <div class="row">
-      <div>
-        <label>Nome do vendedor</label>
-        <input type="text" id="nomeInput" placeholder="Nome do vendedor">
-      </div>
-      <div>
-        <label>WhatsApp</label>
-        <input type="tel" id="foneInput" placeholder="88999999999" maxlength="15" inputmode="numeric">
-      </div>
-    </div>
-
-    <div class="row">
-      <div>
-        <label>Fundo</label>
-        <select id="fundoInput">
-          <option value="fundos/fundo-01.jpeg">Fundo 01</option>
-        </select>
-      </div>
-      <div>
-        <label>Cor do texto</label>
-        <select id="corInput">
-          <option value="#000000">Preto</option>
-          <option value="#ffffff">Branco</option>
-          <option value="#ffd84d">Dourado</option>
-          <option value="#073b9a">Azul escuro</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div>
-        <label>Fonte</label>
-        <select id="fonteInput">
-          <option value="Arial">Arial</option>
-          <option value="Arial Black">Arial Black</option>
-          <option value="Verdana">Verdana</option>
-          <option value="Tahoma">Tahoma</option>
-          <option value="Georgia">Georgia</option>
-          <option value="Impact">Impact</option>
-        </select>
-      </div>
-      <div>
-        <label>Tamanho</label>
-        <select id="tamInput">
-          <option value="46">Pequeno</option>
-          <option value="54" selected>Médio</option>
-          <option value="62">Grande</option>
-          <option value="70">Muito grande</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div>
-        <label>Negrito</label>
-        <select id="boldInput">
-          <option value="400">Normal</option>
-          <option value="900">Negrito</option>
-        </select>
-      </div>
-      <div>
-        <label>Modo da arte</label>
-        <select id="arteModoInput">
-          <option value="contain" selected>Sem cortar</option>
-          <option value="cover">Preencher área</option>
-        </select>
-      </div>
-    </div>
-
-    <label>Ajuste fino da foto</label>
-    <div class="tools">
-      <button onclick="ajustar('zoom',.05)">+</button>
-      <button onclick="ajustar('zoom',-.05)">−</button>
-      <button onclick="ajustar('y',-14)">↑</button>
-      <button onclick="ajustar('y',14)">↓</button>
-    </div>
-    <div class="tools">
-      <button onclick="ajustar('x',-14)">←</button>
-      <button onclick="ajustar('x',14)">→</button>
-      <button onclick="resetFoto()">Reset</button>
-      <button onclick="copiarLink()">Link</button>
-    </div>
-
-    <button class="blue" onclick="desenhar()">VISUALIZAR ARTE</button>
-    <button class="gold" onclick="baixar()">BAIXAR PNG HD</button>
-    <button class="green" onclick="compartilhar()">SALVAR / COMPARTILHAR</button>
-
-    <div class="linkbox" id="linkBox">Digite o WhatsApp para gerar o link.</div>
-    <p class="help">Nesta versão, os elementos fixos já estão no fundo. Se algo ficar fora do lugar, mande print e ajustamos só as coordenadas da arte/foto/texto.</p>
-  </div>
-
-  <div class="preview">
-    <canvas id="canvas" width="1080" height="1920"></canvas>
-  </div>
-
+<div class="card hero">
+<h1>REINO STUDIO - FUNDOS PRONTOS</h1>
+<p>Versão com os fundos prontos enviados. O sistema só preenche arte, foto, nome e telefone.</p>
 </div>
-
+<div class="card">
+<label>Arte oficial do sorteio</label><input type="file" id="arteInput" accept="image/*">
+<label>Foto do vendedor</label><input type="file" id="fotoInput" accept="image/*">
+<div class="row">
+<div><label>Nome do vendedor</label><input type="text" id="nomeInput" placeholder="Nome do vendedor"></div>
+<div><label>WhatsApp</label><input type="tel" id="foneInput" placeholder="88999999999" maxlength="15" inputmode="numeric"></div>
+</div>
+<div class="row">
+<div><label>Fundo</label><select id="fundoInput"><option value="fundos/fundo-01.jpeg">Fundo 01</option>
+<option value="fundos/fundo-02.jpeg">Fundo 02</option>
+<option value="fundos/fundo-03.jpeg">Fundo 03</option>
+<option value="fundos/fundo-04.jpeg">Fundo 04</option>
+<option value="fundos/fundo-05.jpeg">Fundo 05</option>
+<option value="fundos/fundo-06.jpeg">Fundo 06</option>
+<option value="fundos/fundo-07.jpeg">Fundo 07</option>
+<option value="fundos/fundo-08.jpeg">Fundo 08</option>
+<option value="fundos/fundo-09.jpeg">Fundo 09</option>
+<option value="fundos/fundo-10.jpeg">Fundo 10</option>
+<option value="fundos/fundo-11.jpeg">Fundo 11</option>
+<option value="fundos/fundo-12.jpeg">Fundo 12</option>
+<option value="fundos/fundo-13.jpeg">Fundo 13</option>
+<option value="fundos/fundo-14.jpeg">Fundo 14</option></select></div>
+<div><label>Cor do texto</label><select id="corInput"><option value="#000000">Preto</option><option value="#ffffff">Branco</option><option value="#ffd84d">Dourado</option><option value="#073b9a">Azul escuro</option></select></div>
+</div>
+<div class="row">
+<div><label>Fonte</label><select id="fonteInput"><option value="Arial">Arial</option><option value="Arial Black">Arial Black</option><option value="Verdana">Verdana</option><option value="Tahoma">Tahoma</option><option value="Georgia">Georgia</option><option value="Impact">Impact</option></select></div>
+<div><label>Tamanho</label><select id="tamInput"><option value="46">Pequeno</option><option value="54" selected>Médio</option><option value="62">Grande</option><option value="70">Muito grande</option></select></div>
+</div>
+<div class="row">
+<div><label>Negrito</label><select id="boldInput"><option value="400">Normal</option><option value="900">Negrito</option></select></div>
+<div><label>Modo da arte</label><select id="arteModoInput"><option value="contain" selected>Sem cortar</option><option value="cover">Preencher área</option></select></div>
+</div>
+<label>Ajuste fino da foto</label>
+<div class="tools"><button onclick="ajustar('zoom',.05)">+</button><button onclick="ajustar('zoom',-.05)">−</button><button onclick="ajustar('y',-14)">↑</button><button onclick="ajustar('y',14)">↓</button></div>
+<div class="tools"><button onclick="ajustar('x',-14)">←</button><button onclick="ajustar('x',14)">→</button><button onclick="resetFoto()">Reset</button><button onclick="copiarLink()">Link</button></div>
+<button class="blue" onclick="desenhar()">VISUALIZAR ARTE</button>
+<button class="gold" onclick="baixar()">BAIXAR PNG HD</button>
+<button class="green" onclick="compartilhar()">SALVAR / COMPARTILHAR</button>
+<div class="linkbox" id="linkBox">Digite o WhatsApp para gerar o link.</div>
+<p class="help">Suba no GitHub mantendo a pasta <b>fundos</b> junto do <b>index.html</b>. Esta versão já está preparada para os fundos prontos.</p>
+</div>
+<div class="preview"><canvas id="canvas" width="1080" height="1920"></canvas></div>
+</div>
 <script>
-const canvas=document.getElementById('canvas');
-const ctx=canvas.getContext('2d');
-const W=1080, H=1920;
-
-let bg=null, arte=null, foto=null;
-let fotoState={zoom:1,x:0,y:0};
-let waLink='';
-
-function loadImg(src){
-  return new Promise(resolve=>{
-    const im=new Image();
-    im.onload=()=>resolve(im);
-    im.onerror=()=>resolve(null);
-    im.src=src;
-  });
-}
-function fileToImage(file){
-  return new Promise(resolve=>{
-    const r=new FileReader();
-    r.onload=()=>{
-      const im=new Image();
-      im.onload=()=>resolve(im);
-      im.src=r.result;
-    };
-    r.readAsDataURL(file);
-  });
-}
-function cover(im,x,y,w,h){
-  if(!im)return;
-  const ir=im.width/im.height, br=w/h;
-  let sx=0, sy=0, sw=im.width, sh=im.height;
-  if(ir>br){sw=im.height*br; sx=(im.width-sw)/2;}
-  else{sh=im.width/br; sy=(im.height-sh)/2;}
-  ctx.drawImage(im,sx,sy,sw,sh,x,y,w,h);
-}
-function contain(im,x,y,w,h){
-  if(!im)return;
-  const r=Math.min(w/im.width,h/im.height);
-  const nw=im.width*r, nh=im.height*r;
-  ctx.drawImage(im,x+(w-nw)/2,y+(h-nh)/2,nw,nh);
-}
-function telefoneFormatado(raw){
-  let n=(raw||'').replace(/\D/g,'').slice(0,11);
-  if(n.length<=2)return n;
-  if(n.length<=7)return '('+n.slice(0,2)+') '+n.slice(2);
-  return '('+n.slice(0,2)+') '+n.slice(2,7)+'-'+n.slice(7,11);
-}
-function atualizarLink(){
-  const d=(foneInput.value||'').replace(/\D/g,'').slice(0,11);
-  if(d.length===11){
-    waLink='https://wa.me/55'+d;
-    linkBox.textContent=waLink;
-  }else{
-    waLink='';
-    linkBox.textContent='Digite DDD + número com 11 dígitos.';
-  }
-}
-function textoAuto(txt,x,y,maxW,size,color,font,weight){
-  let s=size;
-  do{
-    ctx.font=`${weight} ${s}px "${font}", Arial, sans-serif`;
-    if(ctx.measureText(txt).width<=maxW)break;
-    s-=2;
-  }while(s>26);
-  ctx.fillStyle=color;
-  ctx.fillText(txt,x,y);
-}
+const canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d'),W=1080,H=1920;
+let bg=null,arte=null,foto=null,waLink='',fotoState={zoom:1,x:0,y:0};
+function loadImg(src){return new Promise(r=>{const im=new Image();im.onload=()=>r(im);im.onerror=()=>r(null);im.src=src;})}
+function fileToImage(file){return new Promise(r=>{const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>r(im);im.src=fr.result;};fr.readAsDataURL(file);})}
+function cover(im,x,y,w,h){if(!im)return;const ir=im.width/im.height,br=w/h;let sx=0,sy=0,sw=im.width,sh=im.height;if(ir>br){sw=im.height*br;sx=(im.width-sw)/2}else{sh=im.width/br;sy=(im.height-sh)/2}ctx.drawImage(im,sx,sy,sw,sh,x,y,w,h)}
+function contain(im,x,y,w,h){if(!im)return;const r=Math.min(w/im.width,h/im.height),nw=im.width*r,nh=im.height*r;ctx.drawImage(im,x+(w-nw)/2,y+(h-nh)/2,nw,nh)}
+function telefoneFormatado(raw){let n=(raw||'').replace(/\D/g,'').slice(0,11);if(n.length<=2)return n;if(n.length<=7)return '('+n.slice(0,2)+') '+n.slice(2);return '('+n.slice(0,2)+') '+n.slice(2,7)+'-'+n.slice(7,11)}
+function atualizarLink(){const d=(foneInput.value||'').replace(/\D/g,'').slice(0,11);if(d.length===11){waLink='https://wa.me/55'+d;linkBox.textContent=waLink}else{waLink='';linkBox.textContent='Digite DDD + número com 11 dígitos.'}}
+function textoAuto(txt,x,y,maxW,size,color,font,weight){let s=size;do{ctx.font=`${weight} ${s}px "${font}", Arial, sans-serif`;if(ctx.measureText(txt).width<=maxW)break;s-=2}while(s>26);ctx.fillStyle=color;ctx.fillText(txt,x,y)}
 function desenhar(){
-  atualizarLink();
-  ctx.clearRect(0,0,W,H);
-
-  cover(bg,0,0,W,H);
-
-  const ax=128, ay=235, aw=824, ah=1112;
-  if(arte){
-    if(arteModoInput.value === 'cover') cover(arte,ax,ay,aw,ah);
-    else contain(arte,ax,ay,aw,ah);
-  }else{
-    ctx.fillStyle='rgba(220,220,220,.70)';
-    ctx.fillRect(ax,ay,aw,ah);
-    ctx.fillStyle='#111';
-    ctx.font='56px Arial';
-    ctx.textAlign='center';
-    ctx.fillText('Área da arte do sorteio',540,790);
-    ctx.textAlign='left';
-  }
-
-  const nome=(nomeInput.value||'Nome do vendedor').trim();
-  const fone=telefoneFormatado(foneInput.value)||'(00) 0 0000-0000';
-  const color=corInput.value;
-  const font=fonteInput.value;
-  const weight=boldInput.value;
-  const size=parseInt(tamInput.value,10);
-
-  textoAuto(nome,138,1548,410,size,color,font,weight);
-  textoAuto(fone,138,1765,410,Math.max(40,size-6),color,font,weight);
-
-  const cx=820, cy=1665, r=210;
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(cx,cy,r,0,Math.PI*2);
-  ctx.clip();
-
-  if(foto){
-    const sc=Math.max((r*2)/foto.width,(r*2)/foto.height)*fotoState.zoom;
-    const iw=foto.width*sc, ih=foto.height*sc;
-    ctx.filter='contrast(1.06) saturate(1.06) brightness(1.03)';
-    ctx.drawImage(foto,cx-iw/2+fotoState.x,cy-ih/2+fotoState.y,iw,ih);
-    ctx.filter='none';
-  }else{
-    ctx.fillStyle='rgba(220,220,220,.72)';
-    ctx.fillRect(cx-r,cy-r,r*2,r*2);
-    ctx.fillStyle='#111';
-    ctx.font='36px Arial';
-    ctx.textAlign='center';
-    ctx.fillText('foto do vendedor',cx,cy);
-    ctx.textAlign='left';
-  }
-  ctx.restore();
-
-  ctx.strokeStyle='rgba(255,255,255,.55)';
-  ctx.lineWidth=4;
-  ctx.beginPath();
-  ctx.arc(cx,cy,r,0,Math.PI*2);
-  ctx.stroke();
+ atualizarLink();ctx.clearRect(0,0,W,H);cover(bg,0,0,W,H);
+ const ax=118,ay=225,aw=844,ah=1140;
+ if(arte){arteModoInput.value==='cover'?cover(arte,ax,ay,aw,ah):contain(arte,ax,ay,aw,ah)}else{ctx.fillStyle='rgba(220,220,220,.70)';ctx.fillRect(ax,ay,aw,ah);ctx.fillStyle='#111';ctx.font='56px Arial';ctx.textAlign='center';ctx.fillText('Área da arte do sorteio',540,795);ctx.textAlign='left'}
+ const nome=(nomeInput.value||'Nome do vendedor').trim(),fone=telefoneFormatado(foneInput.value)||'(00) 0 0000-0000';
+ textoAuto(nome,138,1548,420,parseInt(tamInput.value,10),corInput.value,fonteInput.value,boldInput.value);
+ textoAuto(fone,138,1765,420,Math.max(40,parseInt(tamInput.value,10)-6),corInput.value,fonteInput.value,boldInput.value);
+ const cx=825,cy=1668,r=232;ctx.save();ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.clip();
+ if(foto){const sc=Math.max((r*2)/foto.width,(r*2)/foto.height)*fotoState.zoom,iw=foto.width*sc,ih=foto.height*sc;ctx.filter='contrast(1.06) saturate(1.06) brightness(1.03)';ctx.drawImage(foto,cx-iw/2+fotoState.x,cy-ih/2+fotoState.y-18,iw,ih);ctx.filter='none'}else{ctx.fillStyle='rgba(220,220,220,.72)';ctx.fillRect(cx-r,cy-r,r*2,r*2);ctx.fillStyle='#111';ctx.font='36px Arial';ctx.textAlign='center';ctx.fillText('foto do vendedor',cx,cy);ctx.textAlign='left'}
+ ctx.restore();ctx.strokeStyle='rgba(255,255,255,.62)';ctx.lineWidth=4;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.stroke();
 }
-function ajustar(tipo,valor){
-  if(tipo==='zoom')fotoState.zoom=Math.max(.55,Math.min(2.8,fotoState.zoom+valor));
-  if(tipo==='x')fotoState.x+=valor;
-  if(tipo==='y')fotoState.y+=valor;
-  desenhar();
-}
-function resetFoto(){
-  fotoState={zoom:1,x:0,y:0};
-  desenhar();
-}
-async function copiarLink(){
-  atualizarLink();
-  if(!waLink){alert('Digite um WhatsApp válido.');return;}
-  await navigator.clipboard.writeText(waLink);
-  alert('Link copiado.');
-}
-function baixar(){
-  desenhar();
-  canvas.toBlob(blob=>{
-    const a=document.createElement('a');
-    a.href=URL.createObjectURL(blob);
-    a.download='reino-studio-fundo-pronto.png';
-    a.click();
-    setTimeout(()=>URL.revokeObjectURL(a.href),1500);
-  },'image/png',1);
-}
-function compartilhar(){
-  desenhar();
-  canvas.toBlob(async blob=>{
-    const file=new File([blob],'reino-studio-fundo-pronto.png',{type:'image/png'});
-    if(navigator.canShare && navigator.canShare({files:[file]})){
-      await navigator.share({files:[file],title:'Arte Reino da Sorte'});
-    }else baixar();
-  },'image/png',1);
-}
-
-arteInput.addEventListener('change',async()=>{const f=arteInput.files[0];if(f){arte=await fileToImage(f);desenhar();}});
-fotoInput.addEventListener('change',async()=>{const f=fotoInput.files[0];if(f){fotoState={zoom:1,x:0,y:0};foto=await fileToImage(f);desenhar();}});
-foneInput.addEventListener('input',()=>{foneInput.value=telefoneFormatado(foneInput.value);desenhar();});
-[nomeInput,corInput,fonteInput,tamInput,boldInput,arteModoInput].forEach(el=>{el.addEventListener('input',desenhar);el.addEventListener('change',desenhar);});
-fundoInput.addEventListener('change',async()=>{bg=await loadImg(fundoInput.value);desenhar();});
-
-(async()=>{
-  bg=await loadImg('fundos/fundo-01.jpeg');
-  desenhar();
-})();
+function ajustar(tipo,valor){if(tipo==='zoom')fotoState.zoom=Math.max(.55,Math.min(2.8,fotoState.zoom+valor));if(tipo==='x')fotoState.x+=valor;if(tipo==='y')fotoState.y+=valor;desenhar()}
+function resetFoto(){fotoState={zoom:1,x:0,y:0};desenhar()}
+async function copiarLink(){atualizarLink();if(!waLink){alert('Digite um WhatsApp válido.');return}await navigator.clipboard.writeText(waLink);alert('Link copiado.')}
+function baixar(){desenhar();canvas.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reino-studio-fundos-prontos.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)},'image/png',1)}
+function compartilhar(){desenhar();canvas.toBlob(async blob=>{const file=new File([blob],'reino-studio-fundos-prontos.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'Arte Reino da Sorte'})}else baixar()},'image/png',1)}
+arteInput.addEventListener('change',async()=>{const f=arteInput.files[0];if(f){arte=await fileToImage(f);desenhar()}});
+fotoInput.addEventListener('change',async()=>{const f=fotoInput.files[0];if(f){fotoState={zoom:1,x:0,y:0};foto=await fileToImage(f);desenhar()}});
+foneInput.addEventListener('input',()=>{foneInput.value=telefoneFormatado(foneInput.value);desenhar()});
+[nomeInput,corInput,fonteInput,tamInput,boldInput,arteModoInput].forEach(el=>{el.addEventListener('input',desenhar);el.addEventListener('change',desenhar)});
+fundoInput.addEventListener('change',async()=>{bg=await loadImg(fundoInput.value);desenhar()});
+(async()=>{bg=await loadImg(fundoInput.value);desenhar()})();
 </script>
 </body>
 </html>

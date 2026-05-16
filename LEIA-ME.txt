@@ -1,20 +1,12 @@
-REINO STUDIO - TESTE FUNDO PRONTO
+REINO STUDIO - FUNDOS PRONTOS FINAL
 
-Fundo recebido:
-- fundos/fundo-01.jpeg
-- tamanho original detectado: 864x1536
+Quantidade de fundos incluídos: 14
 
-Para subir no GitHub:
-1. Apague os arquivos antigos do repositório.
-2. Envie:
-   - index.html
-   - manifest.json
-   - sw.js
-   - LEIA-ME.txt
-   - pasta fundos completa
-3. Espere o GitHub Pages atualizar.
-4. Teste no link.
+Estrutura:
+- index.html
+- manifest.json
+- sw.js
+- LEIA-ME.txt
+- fundos/
 
-Nesta versão:
-- o fundo já contém topo, selo, vendedor e contato.
-- o sistema só posiciona arte do sorteio, foto, nome e telefone.
+Suba tudo no GitHub mantendo a pasta fundos.
